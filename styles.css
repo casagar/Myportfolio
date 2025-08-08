@@ -1,0 +1,82 @@
+/* This is a CSS comment. The browser ignores it. */
+
+body {
+    background-color: #efddcb; /* A very light blue background (AliceBlue) */
+    color: #fa0000;           /* A dark grey for the main text, easy to read */
+    font-family: Arial, sans-serif; /* A clean font for the whole page */
+    border: 5px solid red;
+}
+
+h1 {
+    color: #005a9c; /* A strong blue for the main heading */
+    text-align:center; /* Center the heading text */
+}
+
+p {
+    line-height: 1.6; /* Add some vertical space between lines of text */
+}
+
+a {
+    color: #3e33d6; /* A vibrant pink for links */
+    text-decoration:none; /* Remove the default underline from links */
+}
+
+/* This rule applies when you hover your mouse over a link */
+a:hover {
+    text-decoration:underline; /* Add the underline back on hover */
+}
+img {
+    border:2px solid #fa0000;
+    padding: 1px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: auto;
+
+}
+ul:hover{
+text-transform: capitalize;
+text-decoration: dotted;
+}
+ul{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:rgb(2, 62, 62);
+}
+footer {
+    text-align: center;
+    margin-top: 40px; /* Add a good amount of space above the footer */
+    font-size: 14px;
+    color: #777777;
+}
+
+header{
+    display: flex;
+}
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+/*responsive site*/
+@media (max-width: 768px)  {
+    
+/* change header to vertical again in mobile*/
+header{
+    flex-direction: column; /*items will be vertical again*/
+    align-items: center;
+    gap: 20px;
+}
+header nav ul {
+    flex-direction: column;
+    align-items: center;
+    padding-left:0 ;
+}
+header nav ul li {
+margin-left: 0;
+margin-top: 15px;
+
+}
+
+}
