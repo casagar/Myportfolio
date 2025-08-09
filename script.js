@@ -34,3 +34,23 @@ myButton.addEventListener('click', function()
     mainHeading.textContent = 'This text was changed by JavaScript!';
 });
 
+
+// select all buttons inside the project cards
+const projectButtons= document.querySelectorAll('.project-card button')
+
+//loop thru all buttons that was found
+projectButtons.forEach(button =>{
+
+    //add a click listner to the current button in the loop
+    button.addEventListener('click',function(){
+    
+        //find the parent element of the clicked button (the /project-card div)
+        const card= button.parentElement;
+
+    //find the paragraph specifically inside that card
+    const paragraph = card.querySelector('p');
+
+    // change the paragraph text
+    paragraph.textContent="Button clicked! You can put new project details here"
+    }); 
+});
