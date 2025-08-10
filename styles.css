@@ -4,7 +4,7 @@ body {
     background-color: #efddcb; /* A very light blue background (AliceBlue) */
     color: #fa0000;           /* A dark grey for the main text, easy to read */
     font-family: Arial, sans-serif; /* A clean font for the whole page */
-    border: 5px solid red;
+    
 }
 
 h1 {
@@ -97,4 +97,16 @@ margin-top: 15px;
     display: flex;
     justify-content: space-between;
     gap: 20px;
+}
+
+button:hover{
+    background-color: #fa0000;
+    color: #efddcb;
+    cursor: pointer;
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+button{
+   
+    transition: background-color 0.9s ease, color 0.9s ease;
 }
