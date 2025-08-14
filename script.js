@@ -1,56 +1,79 @@
-const myName = "birbal";// A string (text)
-let myAge = 30;//A number
+const myProjects = ["Project One", "Project Two", "Project Three"];
 
-// print them in console
-console.log(myName);
-console.log(myAge);
-
-//THIS DEFINES FUNCTION
-function greet (name){
-    console.log("Hello, " + name + "!")
-}
-
-//This Calls the function
-greet ("Sagar");
-greet("Birbal");
-
-// calculator function
-function add (num1, num2){
-    return num1+num2;
-}
-
-//call the function and store the returned value in a new variable
-const  result = add(5,10);
-
-console.log ("the result of the addition is:");
-console.log (result); // this sjhould be printed
-
-
-const myButton = document.querySelector('#myTestButton');
-const mainHeading = document.querySelector('#main-heading')
-myButton.addEventListener('click', function()
-{
-    //this will be run only after button is clicked
-    mainHeading.textContent = 'This text was changed by JavaScript!';
-});
-
-
-// select all buttons inside the project cards
-const projectButtons= document.querySelectorAll('.project-card button')
-
-//loop thru all buttons that was found
-projectButtons.forEach(button =>{
-
-    //add a click listner to the current button in the loop
-    button.addEventListener('click',function(){
+myProjects.forEach(function(ProjectName){
     
-        //find the parent element of the clicked button (the /project-card div)
-        const card= button.parentElement;
+    console.log(ProjectName);
+})
 
-    //find the paragraph specifically inside that card
-    const paragraph = card.querySelector('p');
 
-    // change the paragraph text
-    paragraph.textContent="Button clicked! You can put new project details here"
-    }); 
+
+//const scores = [88, 92, 100, 75, 98];
+
+//const passingScores = scores.filter (function(score){
+    // if 'score >= 90' is true , the score will be included in the new array.
+   
+  //  return score >= 90;
+    
+//})
+  //  console.log("ALl Scores:", scores);
+    //console.log("Passing Scores only:", passingScores);
+
+    //const person = { 
+      //  name: "Sagar",
+       // age: 30,
+        //isStudent: false,
+        //jobTitle: "Developer"
+    //};
+    //console.log(person)
+
+ //   const Projects = [
+   //     { title: "Project One", status: "Complete", hours:40 },
+     //   { title: "Project Two", status: "In Progress", hours:80 },
+       // { title: "Project Three", status: "Complete", hours:60 },
+    //];
+    //lets find just tile for complete projects
+    
+    //const completedProjectTitles = Projects.filter(function(projects){
+        //first we will get projects which are completed only
+      //  return projects.status === "Complete";
+   // })
+    //.map(function(projects){
+        //now we will get mapped title of all returned items which are already filtered to complete
+      //  return projects.title;  
+    //});
+
+//    console.log(completedProjectTitles);
+
+
+
+// the array of the project objevts
+const projects = [
+    {title: "Project One", status: "Complete", hours: 40},
+    {title: "Project Two", status: "In Progress", hours: 80},
+    {title: "Project Three", status: "Complete", hours: 60},
+];
+
+// select the empty container on the page
+const projectsContainer = document.querySelector('.projects-container');
+
+//loop thru the project array
+projects.forEach(function(project){
+    //create new div for card
+    const card = document.createElement('div');
+    card.classList.add('project-card'); //add the css class for stying
+
+    //create the h3 for the title
+    const title = document.createElement('h3');
+    title.textContent = project.title;
+
+    // create the p for the status
+    const status = document.createElement('p');
+    status.textContent = `Status: ${project.status}`;
+    
+    // put the title and status inside the card
+    card.appendChild(title);
+    card.appendChild(status);
+    
+    //put the finished card into the container on the page
+    projectsContainer.appendChild(card);
 });
